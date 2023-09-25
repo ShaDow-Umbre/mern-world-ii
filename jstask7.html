@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Control</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #2b5784;
+        }
+
+        .video-container {
+            position: relative;
+            width: 900px;
+            height: 300px;
+        }
+
+        video {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            font-weight: bold;
+            margin-right: 20px;
+            padding: 10px 20px;
+            background-color: #b0b5ba;
+            color: #000000;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:last-child {
+            margin-right: 0;
+        }
+
+        button:hover {
+            background-color: #0057b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="myVideo" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <h2>Click the following buttons to handle the animation!</h2>
+
+    <div class="button-container">
+        <button id="startButton">Play</button>
+        <button id="pauseButton">Pause</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const startButton = document.getElementById('startButton');
+        const pauseButton = document.getElementById('pauseButton');
+
+        startButton.addEventListener('click', () => {
+            video.play();
+        });
+
+        pauseButton.addEventListener('click', () => {
+            video.pause();
+        });
+    </script>
+</body>
+</html>

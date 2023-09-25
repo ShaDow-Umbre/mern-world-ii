@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group label {
+            width: 150px;
+        }
+
+        .error-message {
+            color: red;
+            margin-left: 10px;
+        }
+
+        .form-input.error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-input" required>
+            <div class="error-message" id="name-error"></div>
+        </div><br><br>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-input" required>
+            <div class="error-message" id="email-error"></div>
+        </div><br><br>
+
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input type="url" id="website" class="form-input" required>
+            <div class="error-message" id="website-error"></div>
+        </div><br><br>
+
+        <div class="form-group">
+            <label for="Message">Message</label>
+            <textarea id="Message" class="form-input" required></textarea>
+            <div class="error-message" id="Message-error"></div>
+        </div><br><br>
+
+ 
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const website = document.getElementById("website");
+            const Message = document.getElementById("Message");
+            const message = document.getElementById("message");
+            const variable = document.getElementById("variable");
+
+            const nameError = document.getElementById("name-error");
+            const emailError = document.getElementById("email-error");
+            const websiteError = document.getElementById("website-error");
+            const MessageError = document.getElementById("Message-error");
+            const messageError = document.getElementById("message-error");
+            const variableError = document.getElementById("variable-error");
+
+            // Remove previous error messages
+            nameError.textContent = "";
+            emailError.textContent = "";
+            websiteError.textContent = "";
+            MessageError.textContent = "";
+            messageError.textContent = "";
+            variableError.textContent = "";
+
+            // Remove red borders from all fields
+            const formInputs = document.querySelectorAll(".form-input");
+            formInputs.forEach(input => input.classList.remove("error"));
+
+            let isValid = true;
+
+            if (!name.value.trim()) {
+                name.classList.add("error");
+                nameError.textContent = "Name is required";
+                isValid = false;
+            }
+
+            if (!email.value.trim()) {
+                email.classList.add("error");
+                emailError.textContent = "Email is required";
+                isValid = false;
+            }
+
+            if (!website.value.trim()) {
+                website.classList.add("error");
+                websiteError.textContent = "Website is required";
+                isValid = false;
+            }
+
+            if (!Message.value.trim()) {
+                Message.classList.add("error");
+                MessageError.textContent = "Text Box is required";
+                isValid = false;
+            }
+
+            if (!message.value.trim()) {
+                message.classList.add("error");
+                messageError.textContent = "Message is required";
+                isValid = false;
+            }
+
+            if (variable.style.display !== "none" && !variable.value.trim()) {
+                variable.classList.add("error");
+                variableError.textContent = "Variable Text Box is required";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+            }
+        }
+    </script>
+</body>
+</html>

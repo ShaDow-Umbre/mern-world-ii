@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+
+    <style>
+        
+        body {
+            background: linear-gradient(to bottom, #d0db34ec, #b5214bba); 
+        }
+    
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="tel"],
+        input[type="add"],
+        select {
+            width: 50%; 
+        }
+        .error-message {
+            display: none;
+            color: red;
+            font-weight: bold;
+        }
+    
+        input:invalid + .error-message {
+            display: inline;
+        }
+    
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        input[type="submit"] {
+            background-color: red; 
+            color: white; 
+            border-radius: 80px; 
+            padding: 10px 40px; 
+            border-color: black;
+            border-width: 3px; 
+            cursor: pointer; 
+        }
+    
+        input[type="submit"]:hover {
+            background-color: darkred; 
+        }
+    </style>
+    
+    <h1 style="color: blue; margin-left: 700px;">Registration Form</h1>
+    <form action="registration_process.php" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required style="margin-left: 50px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required style="margin-left: 51px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required style="margin-left: 83px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required style="margin-left: 60px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+        
+        <label for="confirm_password">Re-enter Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required> 
+        <span class="error-message">POOR OR MISMATCH </span><br><br>
+
+
+        <label >Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required style="margin-left: 68px;">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label> <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required style="margin-left: 90px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" required style="margin-left: 20px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+
+        <label for="address">Address:</label>
+        <input type="add" id="address" name="address" required style="margin-left: 65px;">
+        <span class="error-message">POOR. </span><br><br>
+
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required style="margin-left:85px;"> 
+        <span class="error-message">POOR. </span><br><br>
+
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required  style="margin-left: 65px;">
+            <option value="usa">USA</option>
+            <option value="canada">CANADA</option>
+            <option value="uk">UK</option>
+            <option value="India">INDIA</option>
+            <option value="Turkey">TURKEY</option>
+        </select> <br><br>
+
+        <label for="languages_known">Languages Known:</label>
+        <input type="checkbox" id="english" name="languages_known1" value="english" required>
+        <label for="english">English</label>
+        <input type="checkbox" id="kannada" name="languages_known2" value="kannada" required>
+        <label for="kannada">Kannada</label>
+        <input type="checkbox" id="hindi" name="languages_known3" value="hindi" required>
+        <label for="hindi">Hindi</label>
+        <input type="checkbox" id="telugu" name="languages_known4" value="telugu" required>
+        <label for="telugu">Telugu</label> <br><br><br>
+
+     
+        <div style="text-align: left;">
+            <input type="checkbox" id="declaration" required>
+            <label for="declaration">Hereby, I declare all the given details are true.</label> 
+        </div>   
+        <div style="text-align: right;" >
+            <p>Log in to <a href="https://ethnus.com/" target="_blank">Ethnus</a> website.</p>
+        </div> 
+        <div style="text-align: left;">
+            <input type="submit" value="Register" style="margin-left: 750px;"> 
+        </div>
+    </form>
+    <p>_rajesh_</p>
+</body>
+</html>
+
+
